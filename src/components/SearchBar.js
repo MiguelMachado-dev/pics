@@ -5,10 +5,16 @@ export default class SearchBar extends Component {
     term: ""
   };
 
+  onSearchSubmit = e => {
+    e.preventDefault();
+
+    this.props.onSubmit(this.state.term);
+  };
+
   render() {
     return (
       <div className="ui segment">
-        <form className="ui form">
+        <form onSubmit={this.onSearchSubmit} className="ui form">
           <div className="field">
             <label>Image Search</label>
             <input
