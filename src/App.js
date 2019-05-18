@@ -13,7 +13,9 @@ export default class App extends Component {
       params: { query: term }
     });
 
+    // getting list of images and saving into state
     this.setState({ images: response.data.results });
+    // passing state into a prop in <ImageList />
   };
 
   render() {
